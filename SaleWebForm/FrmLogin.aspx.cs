@@ -31,10 +31,10 @@ namespace SaleWebForm
                 Session["UserName"] = dataReader["userName"];
                 Session["FullName"] = dataReader["fullName"];
                 Response.Redirect("~/Default.aspx");
-                Response.Redirect("~/Default.aspx");
             }
             else
             {
+                SetFocus(TextBoxPassWord);
                 Helpers.RenderAlerts(Helpers.AlertType.danger, LabelWarning, "Tên tài khoản hoặc mật khẩu không chính xác!");
             }
         }

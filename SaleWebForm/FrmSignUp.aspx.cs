@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace SaleWebForm
 {
@@ -32,10 +27,22 @@ namespace SaleWebForm
                             Helpers.RenderAlerts(Helpers.AlertType.warning, LabelWarning, $"Mật khẩu không khớp!");
                         }
                     }
+                    else
+                    {
+                        SetFocus(TextBoxPassWord);
+                    }
                 }
-
-
+                else
+                {
+                    SetFocus(TextBoxUserName);
+                }
             }
+            else
+            {
+                SetFocus(TextBoxFullName);
+            }
+
+
             return false;
         }
 
@@ -52,6 +59,7 @@ namespace SaleWebForm
                 if (UserHelpers.CheckUserNameExist(userName))
                 {
                     Helpers.RenderAlerts(Helpers.AlertType.warning, LabelWarning, $"Tên đăng nhập đã được sử dụng!");
+                    SetFocus(TextBoxUserName);
                 }
                 else
                 {
