@@ -117,9 +117,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\styles-ad.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="FrmCategory.aspx" />
     <Content Include="FrmLogin.aspx" />
     <Content Include="FrmSignUp.aspx" />
     <Content Include="Global.asax" />
@@ -206,6 +208,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FrmCategory.aspx.cs">
+      <DependentUpon>FrmCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FrmCategory.aspx.designer.cs">
+      <DependentUpon>FrmCategory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.aspx.cs">
       <DependentUpon>FrmLogin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -228,8 +237,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="helpers\CategoryHelpers.cs" />
     <Compile Include="helpers\Helpers.cs" />
     <Compile Include="helpers\SqlHelpers.cs" />
+    <Compile Include="helpers\TableHelpers.cs" />
     <Compile Include="helpers\UserHelpers.cs" />
     <Compile Include="helpers\Validation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

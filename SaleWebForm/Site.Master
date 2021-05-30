@@ -55,9 +55,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="~/Contact" runat="server">Liên hệ</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="~/FrmLogin" runat="server">Đăng nhập</a>
-                    </li>
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolderNav" runat="server"></asp:ContentPlaceHolder>
                 </ul>
             </div>
         </nav>

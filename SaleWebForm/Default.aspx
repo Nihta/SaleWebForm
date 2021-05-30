@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="SaleWebForm._Default" %>
 
+<asp:Content ID="ContentPlaceHolderNav" ContentPlaceHolderID="ContentPlaceHolderNav" runat="server">
+    <asp:Literal ID="Literal1" runat="server"></asp:Literal>
+</asp:Content>
+
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="home py-3">
