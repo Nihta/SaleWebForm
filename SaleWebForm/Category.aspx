@@ -42,7 +42,7 @@
                             </div>
 
                             <div class="dataTable-bottom">
-                                <div class="dataTable-info">Hiển thị 1 tới 10 trên 50 danh mục</div>
+                                <asp:Literal ID="LiteralPaginationInfo" runat="server"></asp:Literal>
                                 <asp:Literal ID="LiteralPagination" runat="server"></asp:Literal>
                             </div>
                         </div>

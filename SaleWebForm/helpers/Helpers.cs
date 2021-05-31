@@ -62,6 +62,14 @@ namespace SaleWebForm
 
             label.Text = html;
         }
-    }
 
+
+        public static void ClearInput(params TextBox[] textBoxes)
+        {
+            foreach (TextBox tb in textBoxes)
+            {
+                tb.Text = "";
+            }
+        }
+    }
 }

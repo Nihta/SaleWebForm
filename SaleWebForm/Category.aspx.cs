@@ -9,6 +9,10 @@ namespace SaleWebForm
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        private int numItemPerPage = 10;
+        private int pageCur = 1;
+        private int maxPage = 1;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             RenderTable();
@@ -21,16 +25,24 @@ namespace SaleWebForm
 
             string tbody = "";
             List<tblCategory> data = CategoryHelpers.GetList();
-            data.ForEach(cate => tbody += TableHelpers.MakeRow(
-                cate.categoryId.ToString(),
-                cate.name,
-                cate.description)
-            );
+
+            maxPage = (int)Math.Ceiling(data.Count / (numItemPerPage * 1.0));
+
+            for (int i = (pageCur - 1) * numItemPerPage; i < data.Count && i < pageCur * numItemPerPage; i++)
+            {
+                tblCategory cate = data[i];
+                tbody += TableHelpers.MakeRow(
+                    cate.categoryId.ToString(),
+                    cate.name,
+                    cate.description
+                );
+            }
 
             string html = TableHelpers.MakeTable(thead, tbody, tblId);
             LiteralTable.Text = html;
 
-            LiteralPagination.Text = TableHelpers.MakePagination(1, 5, 1);
+            LiteralPagination.Text = TableHelpers.MakePagination(1, maxPage, pageCur);
+            LiteralPaginationInfo.Text = $"<div class='dataTable-info'>Hiển thị {(pageCur - 1) * numItemPerPage + 1} tới {Math.Min(data.Count, pageCur * numItemPerPage)} trên {data.Count} danh mục</div>";
         }
 
 
@@ -49,6 +61,9 @@ namespace SaleWebForm
 
             CategoryHelpers.Add(name, desc);
 
+            RenderTable();
+
+            Helpers.ClearInput(TextBoxAddName, TextBoxAddDesc);
         }
     }
 }
