@@ -9,11 +9,10 @@
     <link rel="stylesheet" type="text/css" href="Content/styles-ad.css" />
 </head>
 <body>
-
-    <div class="container-fluid px-4">
-        <h1>Quản lý loại hàng hoá</h1>
-        <div class="row">
-            <form id="formCategory" runat="server">
+    <form id="formCategory" runat="server">
+        <div class="container-fluid px-4">
+            <h1>Quản lý loại hàng hoá</h1>
+            <div class="row">
                 <div class="card mb-4 p-0">
                     <div class="card-header">
                         Danh mục
@@ -35,8 +34,6 @@
                                     </label>
                                 </div>
 
-                                <%--<asp:Button ID="ButtonAdd" runat="server" Text="Thêm" OnClick="ButtonAdd_Click" />--%>
-
                                 <div class="d-flex flex-row align-items-center">
                                     <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm</button>
                                     <div class="dataTable-search">
@@ -56,38 +53,37 @@
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
 
 
+        <div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Thêm danh mục mới</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
 
-    <div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Thêm danh mục mới</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
+                    <div class="modal-body">
                         <div class="mb-3">
-                            <label for="recipient-name" class="col-form-label">Tên danh mục:</label>
-                            <input type="text" class="form-control" id="recipient-name" />
+                            <label for="TextBoxAddName" class="col-form-label">Tên danh mục:</label>
+                            <asp:TextBox ID="TextBoxAddName" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                         <div class="mb-3">
-                            <label for="message-text" class="col-form-label">Mô tả:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
+                            <label for="TextBoxAddDesc" class="col-form-label">Mô tả:</label>
+                            <asp:TextBox ID="TextBoxAddDesc" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Huỷ</button>
-                    <button type="button" class="btn btn-primary">Thêm</button>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Huỷ</button>
+                        <asp:Button ID="ButtonAdd" CssClass="btn btn-primary" runat="server" Text="Thêm" OnClick="ButtonAdd_Click" />
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

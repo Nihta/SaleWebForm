@@ -11,17 +11,7 @@ namespace SaleWebForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-
-            //gridView.HeaderRow.TableSection = TableRowSection.TableHeader;
-
-            GetDataGridView();
-
             RenderTable();
-        }
-
-        private void GetDataGridView()
-        {
         }
 
         private void RenderTable()
@@ -54,6 +44,10 @@ namespace SaleWebForm
 
         protected void ButtonAdd_Click(object sender, EventArgs e)
         {
+            string name = TextBoxAddName.Text;
+            string desc = TextBoxAddDesc.Text;
+
+            CategoryHelpers.Add(name, desc);
 
         }
     }

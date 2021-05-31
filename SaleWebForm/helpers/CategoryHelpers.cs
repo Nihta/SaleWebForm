@@ -37,5 +37,19 @@ namespace SaleWebForm
                 return query.ToList();
             }
         }
+
+        public static void Add(string categoryName, string description)
+        {
+            using (DataClassesDataContext db = new DataClassesDataContext())
+            {
+                var itemNewAdd = new tblCategory();
+
+                itemNewAdd.name = categoryName;
+                itemNewAdd.description = description;
+
+                db.tblCategories.InsertOnSubmit(itemNewAdd);
+                db.SubmitChanges();
+            }
+        }
     }
 }
