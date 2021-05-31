@@ -17,13 +17,12 @@
                                 <div class="dataTable-dropdown">
                                     <label>
                                         Show
-                                    <select class="dataTable-selector">
-                                        <option value="5" selected="">5</option>
-                                        <option value="10">10</option>
-                                        <option value="15">15</option>
-                                        <option value="20">20</option>
-                                        <option value="25">25</option>
-                                    </select>
+                                        <asp:DropDownList ID="DropDownListNumOfItemInPage" runat="server" CssClass="dataTable-selector" OnSelectedIndexChanged="DropDownListNumOfItemInPage_SelectedIndexChanged" AutoPostBack="true">
+                                            <asp:ListItem Value="5" Selected="True">5</asp:ListItem>
+                                            <asp:ListItem Value="10">10</asp:ListItem>
+                                            <asp:ListItem Value="25">25</asp:ListItem>
+                                            <asp:ListItem Value="50">50</asp:ListItem>
+                                        </asp:DropDownList>
                                         Item
                                     </label>
                                 </div>
