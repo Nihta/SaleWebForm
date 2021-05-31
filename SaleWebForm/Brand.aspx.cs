@@ -9,7 +9,6 @@ namespace SaleWebForm
 {
     public partial class WebForm3 : System.Web.UI.Page
     {
-        private int numItemPerPage = 5;
         private int pageCur = 1;
         private int maxPage = 1;
 
@@ -20,6 +19,8 @@ namespace SaleWebForm
 
         private void RenderTable()
         {
+            int numItemPerPage = Convert.ToInt32(DropDownListNumOfItemInPage.SelectedValue.ToString());
+
             string tblId = "tbl-brand";
             string thead = TableHelpers.MakeThead("ID", "Brand", "Description");
 
@@ -84,6 +85,11 @@ namespace SaleWebForm
             int id = Convert.ToInt32(IdCateCur.Text);
             BrandHelpers.Delete(id);
 
+            RenderTable();
+        }
+
+        protected void DropDownListNumOfItemInPage_SelectedIndexChanged(object sender, EventArgs e)
+        {
             RenderTable();
         }
     }
