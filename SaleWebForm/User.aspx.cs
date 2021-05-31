@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -8,9 +7,8 @@ using System.Web.UI.WebControls;
 
 namespace SaleWebForm
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class WebForm4 : System.Web.UI.Page
     {
-        private int numItemPerPage = 5;
         private int pageCur = 1;
         private int maxPage = 1;
 
@@ -21,21 +19,24 @@ namespace SaleWebForm
 
         private void RenderTable()
         {
+            int numItemPerPage = Convert.ToInt32(DropDownListNumOfItemInPage.SelectedValue.ToString());
+
             string tblId = "tbl-category";
-            string thead = TableHelpers.MakeThead("ID", "Category", "Description");
+            string thead = TableHelpers.MakeThead("ID", "User Name", "Full Name", "Email");
 
             string tbody = "";
-            List<tblCategory> data = CategoryHelpers.GetList();
+            List<tblUser> data = UserHelpers.GetList();
 
             maxPage = (int)Math.Ceiling(data.Count / (numItemPerPage * 1.0));
 
             for (int i = (pageCur - 1) * numItemPerPage; i < data.Count && i < pageCur * numItemPerPage; i++)
             {
-                tblCategory cate = data[i];
+                tblUser user = data[i];
                 tbody += TableHelpers.MakeRow(
-                    cate.categoryId.ToString(),
-                    cate.name,
-                    cate.description
+                    user.userId.ToString(),
+                    user.userName,
+                    user.fullName,
+                    user.email
                 );
             }
 
@@ -43,7 +44,7 @@ namespace SaleWebForm
             LiteralTable.Text = html;
 
             LiteralPagination.Text = TableHelpers.MakePagination(1, maxPage, pageCur);
-            LiteralPaginationInfo.Text = $"<div class='dataTable-info'>Show {(pageCur - 1) * numItemPerPage + 1} to {Math.Min(data.Count, pageCur * numItemPerPage)} of {data.Count} category</div>";
+            LiteralPaginationInfo.Text = $"<div class='dataTable-info'>Show {(pageCur - 1) * numItemPerPage + 1} to {Math.Min(data.Count, pageCur * numItemPerPage)} of {data.Count} users</div>";
         }
 
 
@@ -58,33 +59,41 @@ namespace SaleWebForm
         protected void ButtonSave_Click(object sender, EventArgs e)
         {
 
-            string name = TextBoxAddName.Text;
-            string desc = TextBoxAddDesc.Text;
+            string fullName = TextBoxFullName.Text;
+            string userName = TextBoxUserName.Text;
+            string email = TextBoxEmail.Text;
+            string passWord = TextBoxPassWord.Text;
 
 
             if (mode.Text == "ADD")
             {
-                CategoryHelpers.Add(name, desc);
+                UserHelpers.Add(fullName, userName, email, passWord, 0);
 
                 RenderTable();
-                Helpers.ClearInput(TextBoxAddName, TextBoxAddDesc);
+                Helpers.ClearInput(TextBoxFullName, TextBoxUserName, TextBoxEmail, TextBoxPassWord);
             }
 
             if (mode.Text == "EDIT")
             {
                 int id = Convert.ToInt32(IdCateCur.Text);
-                CategoryHelpers.Edit(id, name, desc);
+                UserHelpers.Edit(id, fullName, userName, email, passWord, 0);
 
                 RenderTable();
-                Helpers.ClearInput(TextBoxAddName, TextBoxAddDesc);
+                Helpers.ClearInput(TextBoxFullName, TextBoxUserName, TextBoxEmail, TextBoxPassWord);
+
             }
         }
 
         protected void ButtonDelete_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(IdCateCur.Text);
-            CategoryHelpers.Delete(id);
+            UserHelpers.Delete(id);
 
+            RenderTable();
+        }
+
+        protected void DropDownListNumOfItemInPage_SelectedIndexChanged(object sender, EventArgs e)
+        {
             RenderTable();
         }
     }

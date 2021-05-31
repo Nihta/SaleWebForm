@@ -108,6 +108,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="js\chart-area.js" />
+    <Content Include="js\chart-bar.js" />
+    <Content Include="js\chart-pie.js" />
+    <Content Include="js\datatables.js" />
+    <Content Include="js\datatables-simple.js" />
+    <Content Include="js\scripts.js" />
     <Content Include="CommingSoon.html" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -142,6 +148,7 @@
     <Content Include="Category.aspx" />
     <Content Include="Admin.aspx" />
     <Content Include="Brand.aspx" />
+    <Content Include="User.aspx" />
     <None Include="DataClasses.dbml.layout">
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </None>
@@ -235,6 +242,7 @@
     <Compile Include="helpers\BrandHelpers.cs" />
     <Compile Include="helpers\CategoryHelpers.cs" />
     <Compile Include="helpers\Helpers.cs" />
+    <Compile Include="helpers\HtmlHelpers.cs" />
     <Compile Include="helpers\SqlHelpers.cs" />
     <Compile Include="helpers\TableHelpers.cs" />
     <Compile Include="helpers\UserHelpers.cs" />
@@ -288,6 +296,13 @@
     </Compile>
     <Compile Include="Brand.aspx.designer.cs">
       <DependentUpon>Brand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

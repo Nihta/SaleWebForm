@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
@@ -6,6 +7,54 @@ namespace SaleWebForm
 {
     public class UserHelpers
     {
+        public static List<tblUser> GetList()
+        {
+            using (DataClassesDataContext db = new DataClassesDataContext())
+            {
+                var query = from item in db.tblUsers
+                            orderby item.userId descending
+                            select item;
+
+                return query.ToList();
+            }
+        }
+
+        public static void Add(string fullName, string userName, string email, string passWord, int role = 0)
+        {
+            using (DataClassesDataContext db = new DataClassesDataContext())
+            {
+                tblUser itemNewAdd = new tblUser();
+
+                string passWordEndcode = Helpers.EncodePassWord(passWord);
+                itemNewAdd.fullName = fullName;
+                itemNewAdd.userName = userName;
+                itemNewAdd.email = email;
+                itemNewAdd.passWord = passWordEndcode;
+                itemNewAdd.role = role;
+
+                db.tblUsers.InsertOnSubmit(itemNewAdd);
+                db.SubmitChanges();
+            }
+        }
+
+        public static void Edit(int userID, string fullName, string userName, string email, string passWord, int role = 0)
+        {
+            using (DataClassesDataContext db = new DataClassesDataContext())
+            {
+                var itemNeedEdit = db.tblUsers.First(user => user.userId == userID);
+
+                string passWordEndcode = Helpers.EncodePassWord(passWord);
+                itemNeedEdit.fullName = fullName;
+                itemNeedEdit.userName = userName;
+                itemNeedEdit.email = email;
+                itemNeedEdit.passWord = passWordEndcode;
+                itemNeedEdit.role = role;
+
+                db.SubmitChanges();
+            }
+        }
+
+
         /// <summary>
         /// Đăng nhập
         /// </summary>

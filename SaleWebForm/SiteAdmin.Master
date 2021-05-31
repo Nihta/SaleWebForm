@@ -19,20 +19,25 @@
         <a class="navbar-brand ps-3" href="/">Nihta 68</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+
         <!-- Navbar-->
-        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="#!">Cài đặt</a></li>
-                    <li><a class="dropdown-item" href="#!">Thông báo</a></li>
-                    <li>
-                        <hr class="dropdown-divider" />
-                    </li>
-                    <li><a class="dropdown-item" href="#!">Đăng xuất</a></li>
-                </ul>
-            </li>
-        </ul>
+        <div class="d-flex justify-content-end w-100">
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Notify</a></li>
+                        <li>
+                            <hr class="dropdown-divider" />
+                        </li>
+                        <li><a class="dropdown-item" href="#!">LogOut</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
@@ -48,25 +53,29 @@
                         <div class="sb-sidenav-menu-heading">Manage</div>
                         <a class="nav-link" href="Category.aspx">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Category
+                            Categorys
                         </a>
                         <a class="nav-link" href="Brand.aspx">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Brand
+                            Brands
+                        </a>
+                        <a class="nav-link" href="User.aspx">
+                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            Users
                         </a>
                         <a class="nav-link" href="CommingSoon.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Product
+                            Products
                         </a>
 
                         <div class="sb-sidenav-menu-heading">Statistical</div>
                         <a class="nav-link" href="CommingSoon.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Khoản thu
+                            Revenue
                         </a>
                         <a class="nav-link" href="CommingSoon.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Khoản chi
+                            Expense
                         </a>
                     </div>
                 </div>
@@ -81,12 +90,12 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-    <%--    <script src="  js/scripts.js"></script>
+    <script src="js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
-    <script src="assets/demo/chart-bar-demo.js"></script>
+    <script src="js/chart-area.js"></script>
+    <script src="js/demo/chart-bar.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"></script>
-    <script src="  js/datatables-simple-demo.js"></script>--%>
+    <script src=" js/datatables-simple.js"></script>
 </body>
 </html>
 
