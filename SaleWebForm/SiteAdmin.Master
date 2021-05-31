@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Quản trị</title>
+    <title>Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="Content/styles-ad.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
@@ -39,23 +39,27 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Chính</div>
+                        <div class="sb-sidenav-menu-heading">Main</div>
                         <a class="nav-link" href="/">
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Bảng điều khiển
+                            Dashboard
                         </a>
 
-                        <div class="sb-sidenav-menu-heading">Quảng lý</div>
+                        <div class="sb-sidenav-menu-heading">Manage</div>
                         <a class="nav-link" href="Category.aspx">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Danh mục
+                            Category
+                        </a>
+                        <a class="nav-link" href="Brand.aspx">
+                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            Brand
                         </a>
                         <a class="nav-link" href="CommingSoon.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Mặt hàng
+                            Product
                         </a>
 
-                        <div class="sb-sidenav-menu-heading">Thông kê</div>
+                        <div class="sb-sidenav-menu-heading">Statistical</div>
                         <a class="nav-link" href="CommingSoon.html">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Khoản thu

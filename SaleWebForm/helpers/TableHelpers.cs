@@ -15,7 +15,7 @@ namespace SaleWebForm
                 html += $"<th data-sortable='' class=''><a href='#' class='dataTable-sorter'>{colName}</a></th>";
             }
 
-            html += $"<th style='width: 80px'>Hành động</th>";
+            html += $"<th style='width: 80px'>Actions</th>";
 
             return $"<thead><tr>{html}</tr></thead>";
         }
@@ -28,7 +28,7 @@ namespace SaleWebForm
                 html += $"<td>{colValue}</td>";
             }
 
-            html += "<td class='d-flex'><span class='text-primary btn d-block btn-edit'>Sửa </span><span class='text-primary btn d-block btn-delete'>Xoá</span></td>";
+            html += "<td class='d-flex'><span class='text-primary btn d-block btn-edit'>Edit</span><span class='text-primary btn d-block btn-delete'>Del</span></td>";
 
             return $"<tr>{html}</tr>";
         }
@@ -43,14 +43,14 @@ namespace SaleWebForm
 
             string content = "";
 
-            content += $"<li class='page-item {(cur == min ? "disabled" : "")}'><a class='page-link' href='#' tabindex='-1' aria-disabled='{(cur == min ? "true" : "false")}'>Trước</a></li>";
+            content += $"<li class='page-item {(cur == min ? "disabled" : "")}'><a class='page-link' href='#' tabindex='-1' aria-disabled='{(cur == min ? "true" : "false")}'>Prev</a></li>";
 
             for (int i = min; i <= max; i++)
             {
                 content += $"<li class='page-item {(cur == i ? "active" : "")}'><a class='page-link' href='#'>{i}</a></li>";
             }
 
-            content += $"<li class='page-item {(cur == max ? "disabled" : "")}'><a class='page-link' href='#' tabindex='-1' aria-disabled='{(cur == max ? "true" : "false")}'>Sau</a></li>";
+            content += $"<li class='page-item {(cur == max ? "disabled" : "")}'><a class='page-link' href='#' tabindex='-1' aria-disabled='{(cur == max ? "true" : "false")}'>Next</a></li>";
 
             return $"<nav><ul class='pagination'>{content}</ul></nav>";
         }

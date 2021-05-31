@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="SaleWebForm.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="Brand.aspx.cs" Inherits="SaleWebForm.WebForm3" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="card mb-4 p-0">
                     <div class="card-header">
-                        Category
+                        Brand
                     </div>
                     <div class="card-body">
                         <div class="dataTable-wrapper dataTable-loading no-footer sortable searchable fixed-columns">
@@ -61,11 +61,11 @@
 
                     <div class="modal-body">
                         <div class="mb-3">
-                            <label for="TextBoxAddName" class="col-form-label">Tên danh mục:</label>
+                            <label for="TextBoxAddName" class="col-form-label">Brand name:</label>
                             <asp:TextBox ID="TextBoxAddName" runat="server" CssClass="form-control"></asp:TextBox>
                         </div>
                         <div class="mb-3">
-                            <label for="TextBoxAddDesc" class="col-form-label">Mô tả:</label>
+                            <label for="TextBoxAddDesc" class="col-form-label">Description:</label>
                             <asp:TextBox ID="TextBoxAddDesc" runat="server" CssClass="form-control" TextMode="MultiLine"></asp:TextBox>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                 const id = e.parentElement.parentElement.children[0].textContent;
                 document.getElementById('<%= IdCateCur.ClientID %>').value = id.toString();
 
-                if (confirm("Bạn có chắc chắn xoá danh mục này không?")) {
+                if (confirm("Are you sure delete this item?")) {
                     btnDelete.click();
                 }
             });
@@ -126,3 +126,4 @@
 
     </script>
 </asp:Content>
+

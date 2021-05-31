@@ -141,6 +141,7 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Category.aspx" />
     <Content Include="Admin.aspx" />
+    <Content Include="Brand.aspx" />
     <None Include="DataClasses.dbml.layout">
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </None>
@@ -231,6 +232,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClasses.dbml</DependentUpon>
     </Compile>
+    <Compile Include="helpers\BrandHelpers.cs" />
     <Compile Include="helpers\CategoryHelpers.cs" />
     <Compile Include="helpers\Helpers.cs" />
     <Compile Include="helpers\SqlHelpers.cs" />
@@ -279,6 +281,13 @@
     </Compile>
     <Compile Include="Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Brand.aspx.cs">
+      <DependentUpon>Brand.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Brand.aspx.designer.cs">
+      <DependentUpon>Brand.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
