@@ -1,14 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="FrmCategory.aspx.cs" Inherits="SaleWebForm.FrmCategory" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/SiteAdmin.Master" AutoEventWireup="true" CodeBehind="Category.aspx.cs" Inherits="SaleWebForm.WebForm1" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title>Quản lý loại hàng hoá</title>
-    <%--<webopt:BundleReference runat="server" Path="~/Content/css" />--%>
-    <link rel="stylesheet" type="text/css" href="Content/styles-ad.css" />
-</head>
-<body>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <form id="formCategory" runat="server">
         <div class="container-fluid px-4">
             <h1>Quản lý loại hàng hoá</h1>
@@ -84,6 +79,4 @@
             </div>
         </div>
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+</asp:Content>

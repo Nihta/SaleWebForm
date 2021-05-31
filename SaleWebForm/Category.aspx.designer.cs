@@ -11,7 +11,7 @@ namespace SaleWebForm
 {
 
 
-    public partial class FrmCategory
+    public partial class WebForm1
     {
 
         /// <summary>
