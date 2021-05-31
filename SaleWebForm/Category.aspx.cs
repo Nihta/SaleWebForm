@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,7 +10,7 @@ namespace SaleWebForm
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        private int numItemPerPage = 10;
+        private int numItemPerPage = 5;
         private int pageCur = 1;
         private int maxPage = 1;
 
@@ -54,16 +55,37 @@ namespace SaleWebForm
             }
         }
 
-        protected void ButtonAdd_Click(object sender, EventArgs e)
+        protected void ButtonSave_Click(object sender, EventArgs e)
         {
+
             string name = TextBoxAddName.Text;
             string desc = TextBoxAddDesc.Text;
 
-            CategoryHelpers.Add(name, desc);
+
+            if (mode.Text == "ADD")
+            {
+                CategoryHelpers.Add(name, desc);
+
+                RenderTable();
+                Helpers.ClearInput(TextBoxAddName, TextBoxAddDesc);
+            }
+
+            if (mode.Text == "EDIT")
+            {
+                int id = Convert.ToInt32(IdCateCur.Text);
+                CategoryHelpers.Edit(id, name, desc);
+
+                RenderTable();
+                Helpers.ClearInput(TextBoxAddName, TextBoxAddDesc);
+            }
+        }
+
+        protected void ButtonDelete_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(IdCateCur.Text);
+            CategoryHelpers.Delete(id);
 
             RenderTable();
-
-            Helpers.ClearInput(TextBoxAddName, TextBoxAddDesc);
         }
     }
 }

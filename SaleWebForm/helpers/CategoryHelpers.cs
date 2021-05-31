@@ -51,5 +51,29 @@ namespace SaleWebForm
                 db.SubmitChanges();
             }
         }
+
+        public static void Edit(int categoryID, string categoryName, string description)
+        {
+            using (DataClassesDataContext db = new DataClassesDataContext())
+            {
+                var itemNeedEdit = db.tblCategories.First(item => item.categoryId  == categoryID);
+
+                itemNeedEdit.name = categoryName;
+                itemNeedEdit.description = description;
+
+                db.SubmitChanges();
+            }
+        }
+
+        public static void Delete(int categoryID)
+        {
+            using (DataClassesDataContext db = new DataClassesDataContext())
+            {
+                var itemNeedDel = db.tblCategories.First(item => item.categoryId == categoryID);
+
+                db.tblCategories.DeleteOnSubmit(itemNeedDel);
+                db.SubmitChanges();
+            }
+        }
     }
 }

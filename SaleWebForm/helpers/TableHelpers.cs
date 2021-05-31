@@ -12,7 +12,7 @@ namespace SaleWebForm
             string html = "";
             foreach (string colName in colNames)
             {
-                html += $"<th data-sortable='' class='asc'><a href='#' class='dataTable-sorter'>{colName}</a></th>";
+                html += $"<th data-sortable='' class=''><a href='#' class='dataTable-sorter'>{colName}</a></th>";
             }
 
             html += $"<th style='width: 80px'>Hành động</th>";
@@ -28,7 +28,7 @@ namespace SaleWebForm
                 html += $"<td>{colValue}</td>";
             }
 
-            html += "<td class='d-flex'><span class='text-primary btn d-block btn-edit'>Sửa </span><span class='text-primary btn d-block btn-edit'>Xoá</span></td>";
+            html += "<td class='d-flex'><span class='text-primary btn d-block btn-edit'>Sửa </span><span class='text-primary btn d-block btn-delete'>Xoá</span></td>";
 
             return $"<tr>{html}</tr>";
         }
