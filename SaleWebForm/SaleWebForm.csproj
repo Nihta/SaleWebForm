@@ -107,7 +107,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.html" />
     <Content Include="About.aspx" />
+    <Content Include="imgs\error-404.svg" />
     <Content Include="js\chart-area.js" />
     <Content Include="js\chart-bar.js" />
     <Content Include="js\chart-pie.js" />

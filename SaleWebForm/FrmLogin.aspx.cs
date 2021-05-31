@@ -7,7 +7,9 @@ namespace SaleWebForm
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["UserID"] = null;
+            Session["UserName"] = null;
+            Session["FullName"] = null;
         }
 
         protected void BtnLogin_Click(object sender, EventArgs e)

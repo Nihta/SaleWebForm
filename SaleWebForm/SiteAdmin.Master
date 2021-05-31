@@ -31,7 +31,7 @@
                         <li>
                             <hr class="dropdown-divider" />
                         </li>
-                        <li><a class="dropdown-item" href="#!">LogOut</a></li>
+                        <li><a class="dropdown-item" href="FrmLogin.aspx">LogOut</a></li>
                     </ul>
                 </li>
             </ul>
@@ -52,29 +52,29 @@
 
                         <div class="sb-sidenav-menu-heading">Manage</div>
                         <a class="nav-link" href="Category.aspx">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-angle-right"></i></div>
                             Categorys
                         </a>
                         <a class="nav-link" href="Brand.aspx">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-building"></i></div>
                             Brands
                         </a>
                         <a class="nav-link" href="User.aspx">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                             Users
                         </a>
                         <a class="nav-link" href="CommingSoon.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-mobile-alt"></i></div>
                             Products
                         </a>
 
                         <div class="sb-sidenav-menu-heading">Statistical</div>
                         <a class="nav-link" href="CommingSoon.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-hand-holding-usd"></i></div>
                             Revenue
                         </a>
                         <a class="nav-link" href="CommingSoon.html">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-file-invoice-dollar"></i></div>
                             Expense
                         </a>
                     </div>
