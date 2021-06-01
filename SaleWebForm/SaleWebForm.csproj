@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404.html" />
+    <Content Include="403.html" />
     <Content Include="About.aspx" />
     <Content Include="imgs\error-404.svg" />
     <Content Include="js\chart-area.js" />
